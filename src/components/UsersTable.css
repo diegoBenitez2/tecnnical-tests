@@ -1,0 +1,13 @@
+thead th:not(:nth-child(1),:last-child) {
+  cursor: pointer;
+}
+
+thead th:hover:not(:nth-child(1),:last-child) {
+  background-color: #555555;
+}
+
+thead th button {
+  border: 0;
+  background-color: transparent;
+  color: inherit;
+}

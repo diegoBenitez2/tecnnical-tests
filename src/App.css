@@ -1,0 +1,31 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* aprovech colors rows for styleclass */
+#root table.zebra-rows tbody tr:nth-child(odd) {
+  background-color: #333333;;
+}
+
+#root table.zebra-rows tbody tr:nth-child(even) {
+  background-color: #444444;
+}
+
+main nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+nav button {
+  margin: 0 0.5rem;
+}
+
+nav input {
+  padding: 9px;
+  margin: 0 0.5rem
+}
