@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef, useMemo, ChangeEvent } from 'react'
-import type { User, ItemSort } from './types.d'
+import type { User, ItemSort } from '@/types'
 import ApiFetch from './api'
+import UsersTable  from './components/UsersTable/UsersTable';
+import Header  from './components/Header/Header';
 import './App.css'
-import { UserTable } from './components/UsersTable';
 
 declare function structuredClone<T>(object: T): T;
 
@@ -35,12 +36,10 @@ function App() {
   }
 
   const handleRestoreUsers = () => {
-    console.log('restore')
     setUsers(usersRestore.current)
   }
 
   const handleCountriesSort = () =>  {
-    console.log('sort')
     setIsSorted(isSorted => !isSorted)
   }
 
@@ -49,15 +48,13 @@ function App() {
     setItemSort(item)
   }
   const filterByCountry = useMemo(() => {
-    console.log('filter')
     return filterCountry 
       ? users
         .filter((users: User) => users.location.country.toLowerCase().includes(filterCountry))
       : users;
   }, [filterCountry, users])
 
-  const sortAndFilteredUsers = useMemo((): User[] => {
-    console.log('sorted')
+  const sortAndFilteredUsers = useMemo(() => {
     return isSorted 
           ?  structuredClone(filterByCountry)
             .sort((a:User, b:User) => a.location.country
@@ -84,19 +81,14 @@ function App() {
 
   return (
     <main>
-      <header>
-        <h1>Lista de usuarios</h1>
-        <nav style={{marginBottom: '30px'}}>
-          <button onClick={handleColorsRow}>Colorea filas</button>
-          <button onClick={handleCountriesSort}>Ordena por país</button>
-          <button onClick={handleRestoreUsers}>Restaurar Usuarios</button>
-          <label>
-            <input type="text" placeholder="Filtrar por pais" onInput={handleFilterByCountry}/>
-          </label>
-        </nav>
-      </header>
+        <Header 
+          handleColorsRow={handleColorsRow}
+          handleCountriesSort={handleCountriesSort}
+          handleRestoreUsers={handleRestoreUsers}
+          handleFilterByCountry={handleFilterByCountry}
+         />
       <section>
-        <UserTable 
+        <UsersTable 
           users={usersItems}
           isZebraRow={isZebraRow}
           handleDeleteRow={handleDeleteRow}

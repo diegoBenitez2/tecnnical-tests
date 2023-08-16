@@ -1,4 +1,4 @@
-import type { User, ItemSort } from '../types.d'
+import type { User, ItemSort } from "@/types";
 import './UsersTable.css'
 
 interface UserTableProps {
@@ -9,7 +9,7 @@ interface UserTableProps {
 }
 
 
-export const  UserTable: React.FC<UserTableProps>  = ({ 
+const  UserTable: React.FC<UserTableProps>  = ({ 
   users,
   isZebraRow,
   handleItemSort,
@@ -48,3 +48,5 @@ export const  UserTable: React.FC<UserTableProps>  = ({
     </table>
   );
 }
+
+export default UserTable;

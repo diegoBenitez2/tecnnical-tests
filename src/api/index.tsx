@@ -1,4 +1,4 @@
-import { APIResults, User } from "../types.d";
+import { APIResults, User } from "@/types";
 const apiFetch = async ():Promise<User[]> => {
 const response = await fetch('https://randomuser.me/api/?results=100')
   if (!response.ok) {
