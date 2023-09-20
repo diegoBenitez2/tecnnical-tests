@@ -5,11 +5,12 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
       "@/types/*": ["src/types/*"],
-      "@/components/*":["src/components/*"]
+      "@components/*":["src/components/*"]
     },
 
     /* Bundler mode */
@@ -26,7 +27,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "./eslintrc.cjs", "./**/*.test.tsx"],
+  "include": ["src", "./eslintrc.cjs", "./**/*.test.{tsx,ts}", "./jest.config.ts"],
   "exclude": ["node_modules", "dist"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
