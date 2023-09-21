@@ -10,18 +10,18 @@ export interface Info {
   version: string;
 }
 export interface User {
-  gender?:     Gender;
+  gender:     Gender;
   name:       Name;
   location:   Location;
   email:      string;
-  login?:      Login;
-  dob?:        Dob;
-  registered?: Dob;
-  phone?:      string;
-  cell?:       string;
-  id?:         ID;
+  login:      Login;
+  dob:        Dob;
+  registered: Dob;
+  phone:      string;
+  cell:       string;
+  id:         ID;
   picture:    Picture;
-  nat?:        string;
+  nat:        string;
 }
 
 export interface Dob {
@@ -40,13 +40,13 @@ export interface ID {
 }
 
 export interface Location {
-  street?:      Street;
-  city?:        string;
-  state?:       string;
+  street:      Street;
+  city:        string;
+  state:       string;
   country:     string;
-  postcode?:    number | string;
-  coordinates?: Coordinates;
-  timezone?:    Timezone;
+  postcode:    number | string;
+  coordinates: Coordinates;
+  timezone:    Timezone;
 }
 
 export interface Coordinates {
@@ -91,8 +91,8 @@ export enum Title {
 }
 
 export interface Picture {
-  large?:     string;
-  medium?:    string;
+  large:     string;
+  medium:    string;
   thumbnail: string;
 }
 

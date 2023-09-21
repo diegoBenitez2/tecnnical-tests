@@ -1,8 +1,13 @@
-import type { User, ItemSort } from "@/types";
+import type { User, Picture, ItemSort, Name, Location } from "@/types";
 import './UsersTable.css'
 
+type InfoUser = Pick<User, 'email'> 
+  & { picture: Pick<Picture, 'thumbnail'>} 
+  & { name: Pick<Name, 'first' | 'last'>} 
+  & { location: Pick<Location, 'country'>};
+
 interface UserTableProps {
-  users: User[];
+  users: InfoUser[];
   isZebraRow: boolean;
   handleItemSort: (item: keyof ItemSort) => void;
   handleDeleteRow: (email: string) => void;
