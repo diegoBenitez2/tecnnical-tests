@@ -51,7 +51,6 @@ describe('UsersTable', () => {
       //Arrage
       props.isZebraRow = true;
       render(<UserTable { ...props } />);
-      screen.debug();
       //Assert
       expect(screen.getAllByRole('row')[1]).toHaveStyle('background: rgb(51, 51, 51)');
       expect(screen.getAllByRole('row')[2]).toHaveStyle('background: rgb(68, 68, 68)');
